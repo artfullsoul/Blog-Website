@@ -1,38 +1,483 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.main-page
+{
+  /* background-color: #eee; */
+  min-width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+.navbar
+{
+  background-color: white;
+  padding: 1vh 15vw;
+  position:absolute;
+  top:0;
+  z-index: +10;
+  width: 70vw;
+  box-shadow: 0px 8px 16px #eee;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+}
+.nav-links
+{
+  margin: 0;
+  font-size: 1vw;
+  margin-right: 1vw;
+  margin-top: 0.25vw;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+}
+.nav-label
+{
+  margin: 0;
+  font-size: 1.5vw;
+  letter-spacing: 0.3vw;
+}
+.nav-links-cont
+{
+  width: fit-content;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
+.main-img-cont
+{
+  width: 100%;
+  height: 80vh;
+  background-image: url("https://store.hp.com/app/assets/images/uploads/prod/7-best-home-office-setup-ideas-for-telecommuting-hero1583446006576710.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.main-img
+{
+  /* width: 100%; */
+  object-fit: cover;
+}
+.main-tagline-cont
+{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 80vh;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.main-tagline
+{
+  width: 80%;
+  font-size: 6vw;
   color: white;
+  text-align: center;
+  letter-spacing: 1vw;
 }
 
-.App-link {
-  color: #61dafb;
+.post-cont
+{
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #eee;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.post-img
+{
+  width: 100%;
+}
+.post-img-cont
+{
+  width: 50%;
+  overflow: hidden;
+}
+.post-data-cont
+{
+  width: 50%;
+  padding: 0.2vh 2vw;
+}
+.post-by
+{
+  margin-bottom: 0;
+}
+.post-date
+{
+  margin-top: 0;
+}
+.post-mid
+{
+  height: 20vh;
+  overflow: hidden;
+}
+.post-title
+{
+  font-size: 1.5vw;
+  margin: 0;
+}
+.post-desc
+{
+  font-size: 1vw;
+}
+.post-bottom
+{
+  display: flex;
+  flex-direction: row;
+  border-top: 2px solid grey;
+}
+.post-views
+{
+
+}
+.post-comm
+{
+
+}
+.post-views
+{
+  margin-right: 1vw;
+}
+.post-like
+{
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+}
+.indi-post-cont
+{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #eee;
+  padding: 3vw;
+  margin-top: 10vh;
+}
+.indi-post-img-cont
+{
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+.indi-post-img
+{
+  width: 100%;
+}
+.indi-post-mid
+{
+
+}
+.indi-post-title
+{
+  
+  font-size: 2vw;
+  margin: 0;
+}
+.indi-post-desc
+{
+  font-size: 1.5vw;
+  font-weight: 300;
+  line-height: 4.5vh;
+}
+.indi-post-content
+{
+  font-size: 1.2vw;
+  font-weight: 300;
+  line-height: 3.5vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.indi-post-comm-cont
+{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #eee;
+  padding: 3vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.comments-head
+{
+  font-size: 2vw;
+  font-weight: 300;
+  margin: 0;
+  padding-bottom: 1vh;
+  border-bottom: 2px solid grey;
+}
+
+.comment-box
+{
+  width: 95%;
+  border: 2px solid grey;
+  margin-top: 2vh;
+  padding: 1vw;
+}
+.comment-input
+{
+  width: 100%;
+  border: none;
+  font-size: 1.2vw;
+  outline: none;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2vh;
+}
+.publish-butt
+{
+  margin-left: auto;
+  display: block;
+  width: fit-content;
+  padding: 0.5vw 2vw;
+  border-radius: 10px;
+  background-color: grey;
+  cursor: pointer;
+}
+.publish-butt>p
+{
+  margin: 0;
+  color: #eee;
+  width: fit-content;
+  font-weight: 400;
+}
+.comment-cont
+{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2vh;
+  padding-bottom: 2vh;
+  border-bottom: 1px solid #eee;
+}
+.upper-data-cont
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.indi-user-image
+{
+  height: 2vw;
+  width: 2vw;
+  margin-right: 0.5vw;
+}
+.user-image
+{
+  width: 4vw;
+  height: 4vw;
+}
+.comment-data-cont
+{
+  margin-left: 1vw;
+
+}
+.comment-name
+{
+  margin: 0;
+  color: grey;
+  font-weight: 500;
+  font-size: 1vw;
+}
+.comment
+{
+  margin: 0;
+  font-size: 1.2vw;
+}
+
+.create-post-box
+{
+  width: 95%;
+  border: 2px solid grey;
+  margin-top: 10vh;
+  padding: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modify-cont
+{
+  margin-top: 10vh;
+}
+.modify-post-upp
+{
+  display: flex;
+  flex-direction: row;
+}
+.modify-upp-sec2
+{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.edit-butt
+{
+  background-color: green;
+  border-radius: 10px;
+  padding: 0.5vh 1vw;
+  margin-top: 0.5vh;
+  margin-right: 0.3vw;
+  cursor: pointer;
+}
+.edit-butt>p
+{
+  margin: 0;
+  color: white;
+  font-weight: 500;
+}
+.delete-butt
+{
+  background-color: red;
+  border-radius: 10px;
+  padding: 0.5vh 1vw;
+  margin-top: 0.5vh;
+  cursor: pointer;
+}
+.delete-butt>p
+{
+  margin: 0;
+  color: white;
+  font-weight: 500;
+}
+.cancel-modify-butt
+{
+  display: block;
+  width: fit-content;
+  padding: 0.5vw 2vw;
+  border-radius: 10px;
+  background-color: grey;
+  cursor: pointer;
+}
+.cancel-modify-butt>p
+{
+  margin: 0;
+  color: #eee;
+  width: fit-content;
+  font-weight: 400;
+}
+.modify-bottom-butt
+{
+  display: flex;
+  flex-direction: row;
+}
+.input-head-label
+{
+  font-size: 1.5vw;
+  color: grey;
+  font-weight: 600;
+}
+@media only screen and (max-width: 1000px)
+{
+  .navbar{
+    padding: 1vh 5vw;
+    width: 90%;
+  } 
+  .nav-label{
+    font-size: 4.5vw;
+    font-weight: 400;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-links {
+    margin: 0;
+    font-size: 3vw;
+    margin-right: 4vw;
+    margin-top: 0.55vw;
+  }
+  .main-tagline {
+    width: 95%;
+    font-size: 8vw;
+  }
+  .main-img-cont {
+    height: 50vh;
+  }
+  .main-tagline-cont {
+    height: 50vh;
+  }
+  .post-cont{
+    flex-direction: column;
+    width: 95%;
+    border-radius: 10px;
+  }
+  .post-img-cont
+  {
+    width: 100%;
+  }
+  .post-data-cont
+  {
+    width: 90%;
+  }
+  .post-mid{
+    height: auto;
+    min-height: 20vh;
+  }
+  .post-title {
+    font-size: 8.5vw;
+  }
+  .post-desc
+  {
+    font-size: 4vw;
+  }
+  .post-views {
+    margin-right: 5vw;
+  }
+  .indi-post-cont {
+    width: 95%;
+    margin-top: 6vh;
+  }
+  .indi-post-title {
+    font-size: 8.5vw;
+  }
+  .indi-post-desc {
+    font-size: 3.5vw;
+    font-weight: 500;
+    line-height: 2.5vh;
+  }
+  .indi-post-img-cont {
+    height: auto;
+  }
+  .indi-post-content {
+    font-size: 4.2vw;
+    font-weight: 400;
+    line-height: 2.5vh;
+  }
+  .indi-post-comm-cont {
+    width: 95%;
+    margin-top: 2vh;
+  }
+  .comments-head {
+    font-size: 8vw;
+    border-bottom: 1px;
+  }
+  .comment-box {
+    border: 1px solid grey;
+    padding-top: 2vh;
+  }
+  .comment-input {
+    font-size: 4vw;
+  }
+  .publish-butt {
+    padding: 2.5vw 7vw;
+  }
+  .user-image {
+    width: 10vw;
+    height: 10vw
+  }
+  .comment-name {
+    font-size: 3vw;
+  }
+  .comment{
+    font-size: 4vw;
+  }
+  .edit-butt{
+    padding: 1vh 6vw;
+  }
+  .delete-butt {
+    padding: 1vh 6vw;
+  }
+  .input-head-label {
+    font-size: 5.5vw;
+  }
+  .cancel-modify-butt{
+    padding: 2.5vw 7vw;
   }
 }
