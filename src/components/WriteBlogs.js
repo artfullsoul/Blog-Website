@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import UserIcon from "../assets/usericon.png";
-const CreatePost = ({publishPost}) => {
+const WriteBlogs = ({publishPost}) => {
     const [heading,setHeading] = useState("");
     const [desc,setdesc] = useState("");
     const [imageUrl,setimageUrl] = useState("");
@@ -51,4 +51,4 @@ const CreatePost = ({publishPost}) => {
     )
 }
 
-export default CreatePost;
+export default WriteBlogs;

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-const ModidfyPost = ({post,modifyPost,deletePost,updateLikes,index}) => {
+const ModifyBlog = ({post,modifyPost,deletePost,updateLikes,index}) => {
     const [heading,setHeading] = useState("");
     const [desc,setdesc] = useState("");
     const [imageUrl,setimageUrl] = useState("");
@@ -98,4 +98,4 @@ const ModidfyPost = ({post,modifyPost,deletePost,updateLikes,index}) => {
     )
 }
 
-export default ModidfyPost;
+export default ModifyBlog;

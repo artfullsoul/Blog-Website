@@ -4,14 +4,14 @@ import {updatePostData} from "./actions/itemsAction.js"
 import {connect} from "react-redux";
 import ShowPost from './components/ShowPost';
 import UserIcon from "./assets/usericon.png";
-import CreatePost from './components/CreatePost';
-import ModifyPost from "./components/ModifyPost";
+import WriteBlogs from './components/WriteBlogs';
+import ModifyBlogs from "./components/ModifyBlogs.js";
 
 function App(props) {
   const [posts,setPosts] = useState(props.item.blogsData?props.item.blogsData:[]);
   const [selectedPost,setSelectedPost] = useState(null);
   const [selectedIndex,setSelectedIndex] = useState(null);
-  const [selectedNav,setSelectedNav] = useState("All Posts")
+  const [selectedNav,setSelectedNav] = useState("All Blogs")
   
   useEffect(() => {
     console.log(props)
@@ -66,6 +66,8 @@ function App(props) {
     var tempArr = posts;
     tempArr.push(newPostData);
     props.updatePostData(tempArr);
+    alert("Blog Published Successfully!!");
+    setSelectedNav("All Blogs")
   }
 
   const deletePost = (index) => { //FUNCTION TO DELETE A POST
@@ -80,22 +82,24 @@ function App(props) {
     tempArr[index].desc = post.desc;
     tempArr[index].content = post.content;
     tempArr[index].imageUrl = post.imageUrl;
+    props.updatePostData(tempArr);
+    alert("Blog Updated Successfully!!");
   }
   return (
       <div className='main-page'>
 
         {/* NAVBAR */}
-        <div className='navbar' style={{boxShadow:selectedNav === "All Posts"?"none":" 0px 8px 16px #eee"}}>
+        <div className='navbar' style={{boxShadow:selectedNav === "All Blogs"?"none":" 0px 8px 16px #eee"}}>
           <p className='nav-label'>MY-BLOGS</p>
           <div className='nav-links-cont'>
-            <p className='nav-links' style={{borderBottom: selectedNav === "All Posts" ? "1px solid grey" : "0px solid grey"}} onClick={() => { setSelectedPost(null); setSelectedNav("All Posts")}}>All Posts</p>
-            <p className='nav-links' style={{borderBottom: selectedNav === "New Post" ? "1px solid grey" : "0px solid grey"}} onClick={() => { setSelectedPost(null); setSelectedNav("New Post")}}>New Post</p>
-            <p className='nav-links' style={{borderBottom: selectedNav === "Modidfy Post" ? "1px solid grey" : "0px solid grey"}} onClick={() => { setSelectedPost(null); setSelectedNav("Modidfy Post")}}>Modidfy Post</p>
+            <p className='nav-links' style={{borderBottom: selectedNav === "All Blogs" ? "1px solid grey" : "0px solid grey"}} onClick={() => { setSelectedPost(null); setSelectedNav("All Blogs")}}>All Blogs</p>
+            <p className='nav-links' style={{borderBottom: selectedNav === "New Blog" ? "1px solid grey" : "0px solid grey"}} onClick={() => { setSelectedPost(null); setSelectedNav("New Blog")}}>New Blogs</p>
+            <p className='nav-links' style={{borderBottom: selectedNav === "Modidfy Blog" ? "1px solid grey" : "0px solid grey"}} onClick={() => { setSelectedPost(null); setSelectedNav("Modidfy Blog")}}>Modify Blogs</p>
           </div>
         </div>
 
         {/* MAINSECTION IMAGE BANNER */}
-        {(selectedPost === null && selectedNav === "All Posts") && <div className='mid-sec'>
+        {(selectedPost === null && selectedNav === "All Blogs") && <div className='mid-sec'>
           <div className='main-img-cont'>
             {/* <img className='main-img' src="https://store.hp.com/app/assets/images/uploads/prod/7-best-home-office-setup-ideas-for-telecommuting-hero1583446006576710.jpg"/> */}
             <div className='main-tagline-cont'>
@@ -107,7 +111,7 @@ function App(props) {
         {/* BLOG POSTS */}
         <div className='blog-post-cont'>
 
-          {(selectedPost === null && selectedNav === "All Posts") && posts.map((post,index) => {
+          {(selectedPost === null && selectedNav === "All Blogs") && posts.map((post,index) => {
             return(
               <div className='post-cont' onClick={() => {
                 updateView(index);
@@ -137,8 +141,8 @@ function App(props) {
           })}
 
           {selectedPost !== null && <ShowPost post={selectedPost} publishComment={publishComment} updateLikes={updateLikes} index={selectedIndex}/>}
-          {(selectedPost === null && selectedNav === "New Post") && <CreatePost publishPost={publishPost}/>}
-          {(selectedPost === null && selectedNav === "Modidfy Post") && <ModifyPost post={posts} modifyPost={modifyPost} deletePost={deletePost}  updateLikes={updateLikes} index={selectedIndex}/>}
+          {(selectedPost === null && selectedNav === "New Blog") && <WriteBlogs publishPost={publishPost}/>}
+          {(selectedPost === null && selectedNav === "Modidfy Blog") && <ModifyBlogs post={posts} modifyPost={modifyPost} deletePost={deletePost}  updateLikes={updateLikes} index={selectedIndex}/>}
         </div>
 
       </div>
